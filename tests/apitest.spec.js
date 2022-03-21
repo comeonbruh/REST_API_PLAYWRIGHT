@@ -42,7 +42,20 @@ test('def', async({request}) => {
     expect(response.status().toBe(200));
     expect(await response.json()).toMatchObject({
         result:[{
+            //dummy data
             xyz : 'abc'
         }]
     })
+})
+
+//PUT
+test('def', async({request}) => {
+    const response  = await request.put(`${url}`, {
+        //does not include param. Takes in request which is data.
+        data: {
+            //json body
+            "" : ""
+        }
+    });
+    console.log(await response.json());
 })
